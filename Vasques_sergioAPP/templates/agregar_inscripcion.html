@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}Agregar Inscripción{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Encabezado -->
+    <div class="alert alert-primary text-center">
+        <h2>Agregar Inscripción</h2>
+    </div>
+
+    <!-- Mensajes de errores generales -->
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <strong>¡Por favor revisa los errores en el formulario!</strong>
+        <ul>
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li>{{ field|capfirst }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Mensajes flash de éxito o error -->
+    {% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Formulario -->
+    <form method="POST" class="row g-3 shadow p-4 bg-white rounded" novalidate>
+        {% csrf_token %}
+        
+        <!-- Nombre -->
+        <div class="col-md-6">
+            <label for="id_nombre" class="form-label">Nombre</label>
+            {{ form.nombre }}
+            {% if form.nombre.errors %}
+                <div class="text-danger small" aria-describedby="id_nombre">{{ form.nombre.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Teléfono -->
+        <div class="col-md-6">
+            <label for="id_telefono" class="form-label">Teléfono</label>
+            {{ form.telefono }}
+            {% if form.telefono.errors %}
+                <div class="text-danger small">{{ form.telefono.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6">
+            <label for="id_email" class="form-label">Email</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <div class="text-danger small">{{ form.email.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Número de Personas -->
+        <div class="col-md-6">
+            <label for="id_numero_personas" class="form-label">Número de Personas</label>
+            {{ form.numero_personas }}
+            {% if form.numero_personas.errors %}
+                <div class="text-danger small">{{ form.numero_personas.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Institución -->
+        <div class="col-md-6">
+            <label for="id_institucion" class="form-label">Institución</label>
+            {{ form.institucion }}
+            {% if form.institucion.errors %}
+                <div class="text-danger small">{{ form.institucion.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Estado -->
+        <div class="col-md-6">
+            <label for="id_estado" class="form-label">Estado</label>
+            {{ form.estado }}
+            {% if form.estado.errors %}
+                <div class="text-danger small">{{ form.estado.errors }}</div>
+            {% endif %}
+        </div>
+
+       <!-- Observaciones -->
+        <div class="col-12">
+            <label for="id_observaciones" class="form-label">Observaciones</label>
+            {{ form.observaciones }}
+            {% if form.observaciones.errors %}
+                <div class="text-danger small">{{ form.observaciones.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Botones -->
+        <div class="col-12 text-center mt-3">
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Guardar
+            </button>
+            <a href="{% url 'index' %}" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Volver
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}

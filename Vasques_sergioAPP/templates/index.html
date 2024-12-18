@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Principal{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Bienvenido a la página principal</h1>
+    <ul>
+        <li><a href="{% url 'listar_inscripciones' %}">Listar Inscripciones</a></li>
+        <li><a href="{% url 'agregar_inscripcion' %}">Agregar Inscripción</a></li>
+    </ul>
+</div>
+{% endblock %}
