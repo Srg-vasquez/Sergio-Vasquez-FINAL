@@ -5,6 +5,5 @@ from Vasques_sergioAPP import views  # Importa las vistas de la app
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),  # Página principal
-    path('inscripciones/', include('Vasques_sergioAPP.urls')),  # Rutas de la app
-    path('api/', include('Vasques_sergioAPP.urls')),  # API incluída correctamente
+    path('inscripciones/', include('Vasques_sergioAPP.urls')),  # Rutas para inscripciones y APIs
 ]
