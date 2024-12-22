@@ -7,6 +7,8 @@ from .views import (
     EliminarInscripcionView,
     api_instituciones,
     buscar_institucion,
+    cargar_instituciones,
+    agregar_institucion,
     api_autor,
     index
 )
@@ -26,4 +28,12 @@ urlpatterns = [
     path('api/instituciones/', api_instituciones, name='api_instituciones'),
     path('api/instituciones/<int:id>/', buscar_institucion, name='buscar_institucion'),
     path('api/autor/', api_autor, name='api_autor'),
+
+
+       # Ruta para cargar instituciones
+    path('cargar_instituciones/', cargar_instituciones, name='cargar_instituciones'),
+
+    #agregar instituciones
+     path('instituciones/agregar/', agregar_institucion, name='agregar_institucion'),
 ]
+

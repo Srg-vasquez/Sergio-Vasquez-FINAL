@@ -1,5 +1,6 @@
 from django import forms
 from .models import Inscripcion
+from .models import Institucion
 
 class FormInscripcion(forms.ModelForm):
     """
@@ -58,3 +59,17 @@ class FormInscripcion(forms.ModelForm):
         if not telefono.isdigit():
             raise forms.ValidationError("El teléfono solo debe contener números.")
         return telefono
+
+
+class FormInstitucion(forms.ModelForm):
+    """
+    Formulario para agregar una nueva institución.
+    """
+    class Meta:
+        model = Institucion
+        fields = ['nombre', 'direccion', 'telefono']
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de la institución'}),
+            'direccion': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Dirección'}),
+            'telefono': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Teléfono'}),
+        }

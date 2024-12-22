@@ -1,0 +1,27 @@
+
+
+/* Configuración global del contenedor */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Asegura que el contenido principal ocupe todo el espacio disponible */
+.container {
+    flex: 1;
+}
+
+/* Footer fijo en la parte inferior */
+footer {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+}

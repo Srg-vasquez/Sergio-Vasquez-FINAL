@@ -3,11 +3,39 @@
 {% block title %}Página Principal{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1>Bienvenido a la página principal</h1>
-    <ul>
-        <li><a href="{% url 'listar_inscripciones' %}">Listar Inscripciones</a></li>
-        <li><a href="{% url 'agregar_inscripcion' %}">Agregar Inscripción</a></li>
-    </ul>
+<div class="container mt-5 text-center">
+    <h1 class="mb-4">Sistema de inscripciones</h1>
+    
+    {% load static %}
+
+   <!-- Botones -->
+<div class="d-flex justify-content-center gap-4">
+  <!-- Botón Listar Inscripciones -->
+  <a href="{% url 'listar_inscripciones' %}" class="btn btn-primary btn-lg d-flex align-items-center">
+      <i class="bi bi-list-ul me-2"></i> Listar Inscripciones
+  </a>
+  
+  <!-- Botón Agregar Inscripción -->
+  <a href="{% url 'agregar_inscripcion' %}" class="btn btn-success btn-lg d-flex align-items-center">
+      <i class="bi bi-person-plus-fill me-2"></i> Agregar Inscripción
+  </a>
+  
+  <!-- Botón Instituciones -->
+  <a href="http://127.0.0.1:8000/api/instituciones/" class="btn btn-info btn-lg d-flex align-items-center">
+      <i class="bi bi-building me-2"></i> Instituciones
+  </a>
+  
+  <!-- Botón Cargar Instituciones -->
+  <a href="{% url 'cargar_instituciones' %}" class="btn btn-warning btn-lg d-flex align-items-center">
+      <i class="bi bi-arrow-repeat me-2"></i> Cargar Instituciones
+  </a>
+
+  <!-- Botón Agregar Institución -->
+  <a href="{% url 'agregar_institucion' %}" class="btn btn-secondary btn-lg d-flex align-items-center">
+      <i class="bi bi-plus-circle me-2"></i> Agregar Institución
+  </a>
+</div>
+
+
 </div>
 {% endblock %}
