@@ -37,8 +37,9 @@ Este es un proyecto de sistema de inscripción desarrollado como evaluación fin
 
 ## 🔧 Instalación y configuración
 
-Sigue estos pasos para ejecutar el proyecto en tu entorno local:
+## Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
+```bash
 # Clona el repositorio
 git clone https://github.com/Srg-vasquez/Sergio-Vasquez-FINAL.git
 
